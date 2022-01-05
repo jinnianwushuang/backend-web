@@ -1,0 +1,16 @@
+
+.my-sticky-header-table{
+    .q-table__top,
+    .q-table__bottom,
+    thead tr:first-child th{
+        background-color: #ddd 
+    }
+    thead tr th{
+        position: sticky;
+        z-index: 1   
+    } 
+    thead tr:first-child th{
+        top:0;
+    }
+    
+}

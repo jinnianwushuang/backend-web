@@ -1,0 +1,161 @@
+
+http://103.218.3.17:8899/swagger-ui.html
+
+http://103.218.3.17:8899
+
+系统登录: 
+	1.登录:
+	url:  /api/login/LoginWithAccount
+	接口类型: post
+	参数：
+		{
+		  "account": "string",   // 后端部署的IP地址;
+		  "password": "string"   // 密码的hash值  (后端部署的端口号)
+		}
+		备注: 密码的hash值计算方式：
+			const hashPassword  = (inputPassword)  => {
+				var sha1Pass = inputPassword;
+				for (var i = 0; i < 5; i++) {
+					sha1Pass = sha1hash.sha1(sha1Pass);
+				}
+				return sha1Pass;
+			}
+		
+	2.登出:
+	url:  /api/task/query
+	接口类型: get
+	参数：
+		 
+
+概览: 包含3部分:
+
+	url:  /api/tgBusiness/overView
+	接口类型: get
+	参数：
+	
+
+邀请任务:  查询,删除;
+	1.查询定时任务:
+	url:  /api/task/query
+	接口类型: post
+	参数：
+		{
+		  "page": {
+			"current": 0,
+			"size": 0
+		  },
+		  "title": "string" // 涉及的群组标题 (默 认为空)
+		}
+	
+	2.删除定时任务:	
+	url:  /api/task/deleteById
+	接口类型: post
+	参数：
+		{
+		  "id": "string" // 定时任务id
+		}
+	
+	2.删除定时任务;
+	
+	
+	
+	
+
+日志: 查询操作日志,查询异常日志;
+	1. 查询操作日志:
+	url:  /api/log/queryOperateLog
+	接口类型: post
+	参数：
+		{
+		  "page": {
+			"current": 1,  //分页参数
+			"size": 10     //每页数据个数
+		  },
+		  "endTime": 0,   // 日志截止时间戳
+		  "startTime": 0  // 日志开始时间戳
+		}
+
+
+	2. 查询异常日志:
+	url:  /api/log/queryExceptionLog
+	接口类型: post
+	参数：
+		{
+		  "page": {
+			"current": 1,  //分页参数
+			"size": 10     //每页数据个数
+		  },
+		  "endTime": 0,   // 日志截止时间戳
+		  "startTime": 0  // 日志开始时间戳
+		}
+	
+	
+
+TG账号业务: 输入tg账号;登出;输入登录验证码;
+
+	1.输入需要登录的tg账号:
+	url:  /api/tgBusiness/login
+	接口类型: post
+	参数：
+		{
+		  "phoneNumber": "13655669988",  //手机号码
+		  "regionCode": "86"  // 编号
+		}
+	
+	2.输入登录的验证码:
+	url: /api/tgBusiness/verifyCode
+	接口类型: post
+	参数：
+		{
+		  "verifyCode": "string" //TG账号的验证码
+		}
+		
+	3.TG账号登出:
+	url:  /api/tgBusiness/logout
+	接口类型: get
+	参数: 无
+	
+	4.创建TG的新群组
+	url:  /api/tgBusiness/createNewGroup
+	接口类型: post
+	参数: 
+		{
+		  "description": "string",  	// 群组描述
+		  "forImport": false,			// 随便填写
+		  "isChannel": false,			// 暂时直接给 false (是否是订阅频道,true:频道;false:群组)
+		  "title": "string"  			// 群组标题
+		}	
+		
+	5.查询TG群组
+	url:  /api/tgBusiness/queryGroup
+	接口类型: post
+	参数: 
+		{
+		  "page": {  
+			"current": 0,   // 当前页编号
+			"size": 0		// 每页的 个数
+		  },  //分页参数
+		  "title": "string"  // 群组标题(模糊搜索)。 可以为空
+		}
+		
+	6.更新群组的TG用户信息
+	url:  /api/tgBusiness/queryGroupMember
+	接口类型: post
+	参数: 
+		{
+		  "id": 0  // 群组id
+		}
+				
+		
+ 		
+	7. 将群A的用户邀请到群B
+	url:  /api/tgBusiness/migrate 
+	接口类型: post
+	参数: 
+		{
+		  "dstGroupId": 0,  // 群B的 id
+		  "srcGroupId": 0   // 群A的 id
+		}	
+		
+ 
+

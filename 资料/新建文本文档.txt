@@ -1,0 +1,37 @@
+jar 包的启动命令： java   -jar    move-0.0.1-SNAPSHOT.jar
+http://103.218.3.17:8899/swagger-ui.html
+
+telnet  103.218.3.17  8899
+
+http://103.218.3.17/8899
+
+
+mongodb的配置： 地址： localhost 端口：27017 ； 登录用户：testuser，密码：无
+
+解压后放在 C:\Windows\System32 目录下，或者跟jar包放在一个目录下。
+
+测试就往这个群 (大家随便瞅瞅) 里边加。被添加的群是： 中文导航 https://t.me/soso101_qunzu。 我今天把后台的jar包发给你。
+
+
+操作过程： 先登陆系统（账号：后端部署服务器的ip，密码：1cd0662a284571043b74526826e00f3454127547）
+
+使用你这个tg账号登陆我给你发的那2个群，然后再里边随便发2个消息。
+
+Dorich, [2022/1/2 20:52]
+使用你这个tg账号登陆我给你发的那2个群，然后再里边随便发2个消息。
+
+Dorich, [2022/1/2 20:54]
+api/tgBusiness/login    登陆你的tg账号 （例如：regionCode  63  telephoneNumber  9273329697）
+
+Dorich, [2022/1/2 20:55]
+返回给消息后，使用verifycode 接口发送tg收到的验证码
+
+Dorich, [2022/1/2 20:55]
+之后就可以进行正常操作了
+
+
+https://github.com/tdlib/td#using-java
+
+https://tdlib.github.io/td/build.html
+
+

@@ -1,0 +1,31 @@
+8899
+
+
+salt   5
+
+
+public static String getUserPasswordStoreInDatabase(String password, String salt) {
+
+        String passwordInDatabase = new SimpleHash("SHA-1", password, salt, CommonConstants.normalUserPasswordHashTimes).toHex();
+        return passwordInDatabase;
+    }
+
+
+操作过程： 先登陆系统（账号：后端部署服务器的ip，密码：
+1cd0662a284571043b74526826e00f3454127547
+    103.218.3.17
+    
+    8899
+
+
+    {
+  "account": "103.218.3.17",
+  "password": "ed0b836395b0eece3ab9dd22be7567ddd2fdd885"
+}
+
+
+
+
+业务 
+   1.  
+
